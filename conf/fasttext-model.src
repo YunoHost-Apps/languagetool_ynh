@@ -1,0 +1,7 @@
+SOURCE_URL=https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
+SOURCE_SUM=7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=bin
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=lid.176.bin
+SOURCE_EXTRACT=false

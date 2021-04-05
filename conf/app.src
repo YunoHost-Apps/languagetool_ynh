@@ -1,7 +1,7 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://languagetool.org/download/LanguageTool-5.3.zip
+SOURCE_SUM=3303c97a331605d8ffa496bceb08120835543ccd4408e8067178fb9f16476dc2
 SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
+SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=
+SOURCE_FILENAME=LanguageTool-5.3.zip
 SOURCE_EXTRACT=true

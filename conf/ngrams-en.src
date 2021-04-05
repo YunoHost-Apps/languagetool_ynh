@@ -1,0 +1,7 @@
+SOURCE_URL=https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip
+SOURCE_SUM=10e548731d9f58189fc36a553f7f685703be30da0d9bb42d1f7b5bf5f8bb232c
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=zip
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=ngrams-en-20150817.zip
+SOURCE_EXTRACT=true
