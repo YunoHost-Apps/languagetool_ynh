@@ -64,7 +64,7 @@
                     "en": "~100 MB download",
                     "fr": "Téléchargement de ~100 Mo"
                 },
-                "default": true
+                "default": false
             },
             {
                 "name": "use_fasttext",
