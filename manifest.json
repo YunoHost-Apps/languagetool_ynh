@@ -31,7 +31,7 @@
                 "name": "use_ngram",
                 "type": "boolean",
                 "ask": {
-                    "en": "Use ngram data (de, en, es, fr, nl) ?",
+                    "en": "Use ngram data (de, en, es, fr, nl)?",
                     "fr": "Utilizer donnés ngram (de, en, es, fr, nl) ?"
                 },
                 "help": {
@@ -44,7 +44,7 @@
                 "name": "use_untested_ngram",
                 "type": "boolean",
                 "ask": {
-                    "en": "Use untested ngram data (he, it, ru, zh) ? (requires aove option)",
+                    "en": "Use untested ngram data (he, it, ru, zh)? (requires above option)",
                     "fr": "Utilizer donnés ngram non testées (he, it, ru, zh) ? (nécessite l'option ci-dessus)"
                 },
                 "help": {
@@ -57,7 +57,7 @@
                 "name": "use_word2vec",
                 "type": "boolean",
                 "ask": {
-                    "en": "Use word2vec data (de, en, pt) ?",
+                    "en": "Use word2vec data (de, en, pt)?",
                     "fr": "Utilizer donnés word2vec (de, en, pt) ?"
                 },
                 "help": {
@@ -71,7 +71,7 @@
                 "type": "boolean",
                 "ask": {
                     "en": "Use fastext for language detection?",
-                    "fr": "Utilizer fasttext pur la détection de langue ?"
+                    "fr": "Utilizer fasttext pour la détection de langue ?"
                 },
                 "help": {
                     "en": "~131 MB download",
@@ -101,7 +101,7 @@
                 },
                 "help": {
                     "en": "You can add a Grammalecte server to your YunoHost installation with the dedicated package (https://github.com/YunoHost-Apps/grammalecte_ynh)",
-                    "fr": "Vous pouvez ajouter un serveur Grammalecte á votre installation YunoHost avec le paquet dedié (https://github.com/YunoHost-Apps/grammalecte_ynh)"
+                    "fr": "Vous pouvez ajouter un serveur Grammalecte à votre installation YunoHost avec le paquet dedié (https://github.com/YunoHost-Apps/grammalecte_ynh)"
                 },
                 "example": "https://grammalecte.example.com",
                 "default": "",

@@ -9,7 +9,7 @@
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
-LanguageTool is a multilingual grammar, style, and spell checker. This package provides the API server for use by other programns, like the LanguageTool extensions for browsers and word processors.
+LanguageTool is a multilingual grammar, style, and spell checker. This package provides the API server for use by other programs, like the LanguageTool extensions for browsers and word processors.
 
 **Shipped version:** 5.3
 
