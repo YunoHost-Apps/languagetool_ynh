@@ -6,6 +6,7 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
+		use_ngram=0	(USE_NGRAM)
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=0
