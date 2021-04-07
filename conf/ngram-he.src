@@ -1,0 +1,7 @@
+SOURCE_URL=https://languagetool.org/download/ngram-data/untested/ngram-he-20150916.zip
+SOURCE_SUM=8f520d4f24214fe892d646edfa7ec6f9a0bf6b67749a87ef5cc565892ec60410
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=zip
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=ngram-he-20150916.zip
+SOURCE_EXTRACT=true

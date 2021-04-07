@@ -1,0 +1,7 @@
+SOURCE_URL=https://languagetool.org/download/word2vec/en.zip
+SOURCE_SUM=3750e860d0fcee8e96d5116f222fb61ee7e010568f48ae8b79193b48394fd31c
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=zip
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=en.zip
+SOURCE_EXTRACT=true

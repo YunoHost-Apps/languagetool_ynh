@@ -1,63 +1,49 @@
-# App exemple pour YunoHost
+# Serveur LanguageTool pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/REPLACEBYYOURAPP.svg)](https://dash.yunohost.org/appci/app/REPLACEBYYOURAPP) ![](https://ci-apps.yunohost.org/ci/badges/REPLACEBYYOURAPP.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/REPLACEBYYOURAPP.maintain.svg)  
-[![Installer REPLACEBYYOURAPP avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=REPLACEBYYOURAPP)
+[![Niveau d'intégration](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)  
+[![Installer languagetool avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=languagetool)
 
 *[Read this readme in english.](./README.md)* 
 
-> *Ce package vous permet d'installer REPLACEBYYOURAPP rapidement et simplement sur un serveur YunoHost.  
+> *Ce package vous permet d'installer LanguageTool rapidement et simplement sur un serveur YunoHost.  
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
-Description rapide de cette application.
+LanguageTool est un correcteur d'orthographe, de grammaire et de style multilingue. Ce paquet fournit le serveur API pour utilisation depus d'autres programmes, comme les extensions LangageTool pour navigateurs et logiciels de bureautique. 
 
-**Version incluse :** 1.0
+**Version incluse :** 5.3
 
 ## Captures d'écran
 
-![](Lien vers une capture d'écran de cette application.)
+![](https://github.com/YunoHost-Apps/languagetool_ynh/raw/master/screenshot_fr.png)
 
 ## Démo
 
-* [Démo officielle](Lien vers un site de démonstration de cette application.)
+* [Démo officielle](https://api.languagetool.org/)
 
 ## Configuration
 
-Comment configurer cette application : via le panneau d'administration, un fichier brut en SSH ou tout autre moyen.
+Il y a un fichier de configuration à `/opt/yunohost/languagetool/languagetool.conf` (pour la première installation).
 
 ## Documentation
 
- * Documentation officielle : Lien vers la documentation officielle de cette application.
- * Documentation YunoHost : Si une documentation spécifique est nécessaire, n'hésitez pas à contribuer.
-
-## Caractéristiques spécifiques YunoHost
+ * Documentation officielle : https://dev.languagetool.org/
 
 #### Support multi-utilisateur
 
-* L'authentification LDAP et HTTP est-elle prise en charge ?
-* L'application peut-elle être utilisée par plusieurs utilisateurs ?
+* L'authentification LDAP et HTTP est-elle prise en charge ? **S/O**
+* L'application peut-elle être utilisée par plusieurs utilisateurs ? **S/O**
 
 #### Architectures supportées
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/REPLACEBYYOURAPP%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/REPLACEBYYOURAPP/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/REPLACEBYYOURAPP%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/REPLACEBYYOURAPP/)
-
-## Limitations
-
-* Limitations connues.
-
-## Informations additionnelles
-
-* Autres informations que vous souhaitez ajouter sur cette application.
-
-**Plus d'informations sur la page de documentation :**  
-https://yunohost.org/packaging_apps
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/languagetool%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/languagetool%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/languagetool/)
 
 ## Liens
 
- * Signaler un bug : https://github.com/YunoHost-Apps/REPLACEBYYOURAPP_ynh/issues
- * Site de l'application : Lien vers le site officiel de cette application.
- * Dépôt de l'application principale : Lien vers le dépôt officiel de l'application principale.
+ * Signaler un bug : https://github.com/YunoHost-Apps/languagetool_ynh/issues
+ * Site de l'application : https://languagetool.org/fr/
+ * Dépôt de l'application principale : https://github.com/languagetool-org/languagetool
  * Site web YunoHost : https://yunohost.org/
 
 ---
@@ -65,11 +51,11 @@ https://yunohost.org/packaging_apps
 ## Informations pour les développeurs
 
 **Seulement si vous voulez utiliser une branche de test pour le codage, au lieu de fusionner directement dans la banche principale.**
-Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/REPLACEBYYOURAPP_ynh/tree/testing).
+Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing).
 
 Pour essayer la branche testing, procédez comme suit.
 ```
-sudo yunohost app install https://github.com/YunoHost-Apps/REPLACEBYYOURAPP_ynh/tree/testing --debug
+sudo yunohost app install https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing --debug
 ou
-sudo yunohost app upgrade REPLACEBYYOURAPP -u https://github.com/YunoHost-Apps/REPLACEBYYOURAPP_ynh/tree/testing --debug
+sudo yunohost app upgrade languagetool -u https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing --debug
 ```

@@ -1,5 +1,5 @@
 [Unit]
-Description=Small description of the service
+Description=Spelling and grammar checking server
 After=network.target
 
 [Service]
@@ -7,7 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__/script
+ExecStart=java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port __PORT__ --config __FINALPATH__/languagetool.conf
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
