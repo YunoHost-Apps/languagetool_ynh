@@ -108,7 +108,7 @@ compile_fasttext
 ynh_script_progression --message="Upgrading systemd configuration..." --weight=1
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_add_systemd_config -v port
 
 #=================================================
 # UPDATE A CONFIG FILE
