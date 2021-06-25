@@ -6,7 +6,7 @@
         "en": "Multilingual grammar, style, and spell checker (API)",
         "fr": "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
     },
-    "version": "5.3~ynh1",
+    "version": "5.4~ynh1",
     "url": "https://languagetool.org",
     "license": "LGPL-2.1-only",
     "maintainer": {

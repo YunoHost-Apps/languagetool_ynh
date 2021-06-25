@@ -9,9 +9,9 @@
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
-LanguageTool est un correcteur d'orthographe, de grammaire et de style multilingue. Ce paquet fournit le serveur API pour utilisation depus d'autres programmes, comme les extensions LangageTool pour navigateurs et logiciels de bureautique. 
+LanguageTool est un correcteur d'orthographe, de grammaire et de style multilingue. Ce paquet fournit le serveur API pour utilisation depuis d'autres programmes, comme les extensions LangageTool pour navigateurs et logiciels de bureautique.
 
-**Version incluse :** 5.3
+**Version incluse :** 5.4
 
 ## Captures d'écran
 
