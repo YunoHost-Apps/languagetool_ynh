@@ -1,7 +1,7 @@
-SOURCE_URL=https://languagetool.org/download/LanguageTool-5.4.zip
-SOURCE_SUM=bb02957a2967c82424cc1c6657e704dbc3dfe54078f3d8134646741471b2bc2b
+SOURCE_URL=https://languagetool.org/download/LanguageTool-5.5.zip
+SOURCE_SUM=18d16d103f1e59b125a1f48ff9d3c23051f21a80b2ca64a1da305d576245f90d
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=LanguageTool-5.4.zip
+SOURCE_FILENAME=LanguageTool-5.5.zip
 SOURCE_EXTRACT=true
