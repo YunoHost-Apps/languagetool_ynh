@@ -21,7 +21,7 @@
         "nginx"
     ],
     "arguments": {
-        "install" : [
+        "install": [
             {
                 "name": "domain",
                 "type": "domain",
@@ -89,6 +89,19 @@
                 "help": {
                     "en": "Reduces fasttex model download to ~938 KB, but slower and less accurate",
                     "fr": "Réduit la taille du téléchargement du modéle fasttext à ~938 Ko, mais moins rapide et précis"
+                },
+                "default": false
+            },
+            {
+                "name": "use_beolingus",
+                "type": "boolean",
+                "ask": {
+                    "en": "Use Beolingus German-English word list?",
+                    "fr": "Utilizer liste de mots allemand-anglais Beolingus?"
+                },
+                "help": {
+                    "en": "~8 MB, download",
+                    "fr": "Téléchargement de ~8 MB"
                 },
                 "default": false
             },

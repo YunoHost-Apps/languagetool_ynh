@@ -14,7 +14,7 @@ source /usr/share/yunohost/helpers
 # MANAGE SCRIPT FAILURE
 #=================================================
 
-ynh_clean_setup () {
+ynh_clean_setup() {
 	true
 }
 # Exit if an error occurs during the execution of the script
@@ -25,30 +25,19 @@ ynh_abort_if_errors
 #=================================================
 ynh_script_progression --message="Loading installation settings..." --weight=1
 
-app=$YNH_APP_INSTANCE_NAME
-
-domain=$(ynh_app_setting_get --app=$app --key=domain)
-path_url=$(ynh_app_setting_get --app=$app --key=path)
-final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-data_path=$(ynh_app_setting_get --app=$app --key=data_path)
-use_ngram=$(ynh_app_setting_get --app=$app --key=use_ngram)
-use_untested_ngram=$(ynh_app_setting_get --app=$app --key=use_untested_ngram)
-use_word2vec=$(ynh_app_setting_get --app=$app --key=use_word2vec)
-use_fasttext=$(ynh_app_setting_get --app=$app --key=use_fasttext)
-use_compressed_fasttext=$(ynh_app_setting_get --app=$app --key=use_compressed_fasttext)
-grammalecte_server=$(ynh_app_setting_get --app=$app --key=grammalecte_server)
+load_installation_settings
 
 #=================================================
 # CHECK IF THE APP CAN BE RESTORED
 #=================================================
 ynh_script_progression --message="Validating restoration parameters..." --weight=1
 
-ynh_webpath_available --domain=$domain --path_url=$path_url \
-	|| ynh_die --message="Path not available: ${domain}${path_url}"
-test ! -d $final_path \
-	|| ynh_die --message="There is already a directory: $final_path "
-test ! -d $data_path \
-	|| ynh_die --message="There is already a directory: $data_path "
+ynh_webpath_available --domain=$domain --path_url=$path_url ||
+	ynh_die --message="Path not available: ${domain}${path_url}"
+test ! -d $final_path ||
+	ynh_die --message="There is already a directory: $final_path "
+test ! -d $data_path ||
+	ynh_die --message="There is already a directory: $data_path "
 
 #=================================================
 # STANDARD RESTORATION STEPS

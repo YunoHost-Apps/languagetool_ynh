@@ -31,6 +31,7 @@ use_untested_ngram=$YNH_APP_ARG_USE_UNTESTED_NGRAM
 use_word2vec=$YNH_APP_ARG_USE_WORD2VEC
 use_fasttext=$YNH_APP_ARG_USE_FASTTEXT
 use_compressed_fasttext=$YNH_APP_ARG_USE_COMPRESSED_FASTTEXT
+use_beolingus=$YNH_APP_ARG_USE_BEOLINGUS
 grammalecte_server=$YNH_APP_ARG_GRAMMALECTE_SERVER
 app=$YNH_APP_INSTANCE_NAME
 
@@ -59,6 +60,7 @@ ynh_app_setting_set --app=$app --key=use_untested_ngram --value=$use_untested_ng
 ynh_app_setting_set --app=$app --key=use_word2vec --value=$use_word2vec
 ynh_app_setting_set --app=$app --key=use_fasttext --value=$use_fasttext
 ynh_app_setting_set --app=$app --key=use_compressed_fasttext --value=$use_compressed_fasttext
+ynh_app_setting_set --app=$app --key=use_beolingus --value=$use_beolingus
 ynh_app_setting_set --app=$app --key=grammalecte_server --value=$grammalecte_server
 
 #=================================================
