@@ -6,15 +6,22 @@
         "en": "Multilingual grammar, style, and spell checker (API)",
         "fr": "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
     },
-    "version": "5.7~ynh1",
+    "version": "5.7~ynh2",
     "url": "https://languagetool.org",
+    "upstream": {
+        "license": "LGPL-2.1-only",
+        "website": "https://languagetool.org",
+        "demo": "https://api.languagetool.org/",
+        "admindoc": "https://dev.languagetool.org/",
+        "code": "https://github.com/languagetool-org/languagetool"
+    },
     "license": "LGPL-2.1-only",
     "maintainer": {
         "name": "Jules Bertholet",
         "email": "jules.bertholet@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 4.1.3"
+        "yunohost": ">= 4.3.0"
     },
     "multi_instance": true,
     "services": [
@@ -24,8 +31,7 @@
         "install": [
             {
                 "name": "domain",
-                "type": "domain",
-                "example": "example.com"
+                "type": "domain"
             },
             {
                 "name": "use_ngram",

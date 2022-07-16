@@ -14,7 +14,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 ynh_clean_setup () {
-	true
+	ynh_clean_check_starting
 }
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
@@ -25,7 +25,6 @@ ynh_abort_if_errors
 
 domain=$YNH_APP_ARG_DOMAIN
 path_url='/'
-is_public=1
 use_ngram=$YNH_APP_ARG_USE_NGRAM
 use_untested_ngram=$YNH_APP_ARG_USE_UNTESTED_NGRAM
 use_word2vec=$YNH_APP_ARG_USE_WORD2VEC
@@ -33,6 +32,7 @@ use_fasttext=$YNH_APP_ARG_USE_FASTTEXT
 use_compressed_fasttext=$YNH_APP_ARG_USE_COMPRESSED_FASTTEXT
 use_beolingus=$YNH_APP_ARG_USE_BEOLINGUS
 grammalecte_server=$YNH_APP_ARG_GRAMMALECTE_SERVER
+
 app=$YNH_APP_INSTANCE_NAME
 
 #=================================================
@@ -82,6 +82,14 @@ ynh_script_progression --message="Installing dependencies..." --weight=1
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="$final_path"
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=100
@@ -102,12 +110,19 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 ynh_add_nginx_config
 
 #=================================================
-# CREATE DEDICATED USER
+# SPECIFIC SETUP
 #=================================================
-ynh_script_progression --message="Configuring system user..." --weight=1
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..."
 
-# Create a system user
-ynh_system_user_create --username=$app
+add_languagetool_config
+
+#=================================================
+# COMPILE FASTTEXT
+#=================================================
+
+compile_fasttext
 
 #=================================================
 # SETUP SYSTEMD
@@ -118,22 +133,6 @@ ynh_script_progression --message="Configuring a systemd service..." --weight=1
 ynh_add_systemd_config
 
 #=================================================
-# ADD A CONFIGURATION
-#=================================================
-
-add_languagetool_config
-
-#=================================================
-# SPECIFIC SETUP
-#=================================================
-# COMPILE FASTTEXT
-#=================================================
-
-compile_fasttext
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
@@ -143,6 +142,8 @@ chmod -R g=u,g-w,o-rwx $final_path
 chown -R root:$app $data_path
 chmod -R g=u,g-w,o-rwx $data_path
 
+#=================================================
+# GENERIC FINALIZATION
 #=================================================
 # SETUP LOGROTATE
 #=================================================
@@ -171,13 +172,9 @@ ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$ap
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
-# Make app public if necessary
-if [ $is_public -eq 1 ]
-then
-	# Everyone can access the app.
-	# The "main" permission is automatically created before the install script.
-	ynh_permission_update --permission="main" --add="visitors"
-fi
+# Everyone can access the app.
+# The "main" permission is automatically created before the install script.
+ynh_permission_update --permission="main" --add="visitors"
 
 #=================================================
 # RELOAD NGINX

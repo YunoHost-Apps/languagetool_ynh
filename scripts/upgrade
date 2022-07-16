@@ -14,19 +14,14 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Loading installation settings..." --weight=1
 
-load_installation_settings
+app=$YNH_APP_INSTANCE_NAME
 
-#=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-if [ -z "$use_beolingus" ]; then
-	use_beolingus=0
-	ynh_app_setting_set --app=$app --key=use_beolingus --value=$use_beolingus
-fi
+load_installation_settings
 
 #=================================================
 # CHECK VERSION
 #=================================================
+ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -37,7 +32,8 @@ ynh_script_progression --message="Backing up the app before upgrading (may take 
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
-ynh_clean_setup() {
+ynh_clean_setup () {
+	ynh_clean_check_starting
 	# Restore it if the upgrade fails
 	ynh_restore_upgradebackup
 }
@@ -54,10 +50,29 @@ ynh_script_progression --message="Stopping a systemd service..." --weight=1
 ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression --message="Ensuring downward compatibility..."
+
+if [ -z "$use_beolingus" ]; then
+	use_beolingus=0
+	ynh_app_setting_set --app=$app --key=use_beolingus --value=$use_beolingus
+fi
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
+
+# Create a dedicated user (if not existing)
+ynh_system_user_create --username=$app --home_dir="$final_path"
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]; then
+if [ "$upgrade_type" == "UPGRADE_APP" ]
+then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
@@ -65,6 +80,13 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]; then
 
 	download_data
 fi
+
+#=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading dependencies..." --weight=1
+
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # NGINX CONFIGURATION
@@ -75,27 +97,26 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 ynh_add_nginx_config
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
-
-# Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app
-
-#=================================================
 # SPECIFIC UPGRADE
 #=================================================
 # COMPILE FASTTEXT
 #=================================================
 
 compile_fasttext
+
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Updating a configuration file..."
+
+add_languagetool_config
+
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+# Set permissions on app files
+set_permissions
 
 #=================================================
 # SETUP SYSTEMD
@@ -106,20 +127,7 @@ ynh_script_progression --message="Upgrading systemd configuration..." --weight=1
 ynh_add_systemd_config
 
 #=================================================
-# UPDATE A CONFIG FILE
-#=================================================
-
-add_languagetool_config
-
-#=================================================
 # GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions on app files
-set_permissions
-
 #=================================================
 # SETUP LOGROTATE
 #=================================================

@@ -1,0 +1,1 @@
+LanguageTool est un correcteur d'orthographe, de grammaire et de style multilingue. Ce paquet fournit le serveur API pour utilisation depuis d'autres programmes, comme les extensions LangageTool pour navigateurs et logiciels de bureautique.
