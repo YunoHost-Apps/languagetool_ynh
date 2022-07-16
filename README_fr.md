@@ -37,7 +37,7 @@ Il y a un fichier de configuration à `/opt/yunohost/languagetool/languagetool.c
 #### Architectures supportées
 
 * x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/languagetool%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/languagetool%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/languagetool/)
+* ARMv8-A
 
 ## Liens
 
