@@ -41,7 +41,6 @@ There is a configuration file at `/opt/yunohost/languagetool/languagetool.conf` 
 * YunoHost documentation for this app: <https://yunohost.org/app_languagetool>
 * Report a bug: <https://github.com/YunoHost-Apps/languagetool_ynh/issues>
 
-
 ## Developer info
 
 Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing).
