@@ -18,7 +18,8 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 LanguageTool is a multilingual grammar, style, and spell checker. This package provides the API server for use by other programs, like the LanguageTool extensions for browsers and word processors.
 
 
-**Shipped version:** 5.8
+**Shipped version:** 5.8~ynh1
+
 
 **Demo:** https://api.languagetool.org/
 
