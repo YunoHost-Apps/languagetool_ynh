@@ -18,7 +18,8 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 LanguageTool est un correcteur d'orthographe, de grammaire et de style multilingue. Ce paquet fournit le serveur API pour utilisation depuis d'autres programmes, comme les extensions LangageTool pour navigateurs et logiciels de bureautique.
 
 
-**Version incluse :** 5.7~ynh2
+**Version incluse :** 5.8~ynh1
+
 
 **Démo :** https://api.languagetool.org/
 
