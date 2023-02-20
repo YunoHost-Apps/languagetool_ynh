@@ -1,3 +1,3 @@
 ## Configuration
 
-Il y a un fichier de configuration à `/opt/yunohost/languagetool/languagetool.conf` (pour la première installation).
+Il y a un fichier de configuration à `/var/www/languagetool/languagetool.conf` (pour la première installation).

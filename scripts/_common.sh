@@ -27,12 +27,6 @@ function download_data {
 		fi
 	fi
 
-	if [ $use_word2vec -eq 1 ]; then
-		ynh_setup_source --dest_dir="$data_path/word2vec/de" --source_id="word2vec-de"
-		ynh_setup_source --dest_dir="$data_path/word2vec/en" --source_id="word2vec-en"
-		ynh_setup_source --dest_dir="$data_path/word2vec/pt" --source_id="word2vec-pt"
-	fi
-
 	if [ $use_fasttext -eq 1 ]; then
 		if [ $use_compressed_fasttext -eq 1 ]; then
 			ynh_setup_source --dest_dir="$data_path/fasttext" --source_id="fasttext-model-compressed"
@@ -52,12 +46,6 @@ function add_languagetool_config {
 		language_model_config_line="languageModel=$data_path/ngrams"
 	else
 		language_model_config_line=""
-	fi
-
-	if [ $use_word2vec -eq 1 ]; then
-		word2vec_model_config_line="word2vecModel=$data_path/word2vec"
-	else
-		word2vec_model_config_line=""
 	fi
 
 	if [ $use_fasttext -eq 1 ]; then
@@ -115,7 +103,6 @@ function load_installation_settings {
 	data_path=$(ynh_app_setting_get --app=$app --key=data_path)
 	use_ngram=$(ynh_app_setting_get --app=$app --key=use_ngram)
 	use_untested_ngram=$(ynh_app_setting_get --app=$app --key=use_untested_ngram)
-	use_word2vec=$(ynh_app_setting_get --app=$app --key=use_word2vec)
 	use_fasttext=$(ynh_app_setting_get --app=$app --key=use_fasttext)
 	use_compressed_fasttext=$(ynh_app_setting_get --app=$app --key=use_compressed_fasttext)
 	use_beolingus=$(ynh_app_setting_get --app=$app --key=use_beolingus)

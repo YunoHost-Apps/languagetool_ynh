@@ -1,5 +1,5 @@
-SOURCE_URL=https://languagetool.org/download/LanguageTool-5.8.zip
-SOURCE_SUM=20913a50eb4568fdc727066eee8aab833f52b626710fc9e0213c3f1098bfdee3
+SOURCE_URL=https://languagetool.org/download/LanguageTool-6.0.zip
+SOURCE_SUM=d1a2ab7f59606003db139c65dd76d347d27d298cc465132a970fd167fdacde4f
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
