@@ -6,7 +6,7 @@
         "en": "Multilingual grammar, style, and spell checker (API)",
         "fr": "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
     },
-    "version": "5.8~ynh1",
+    "version": "6.0~ynh1",
     "url": "https://languagetool.org",
     "upstream": {
         "license": "LGPL-2.1-only",
@@ -56,19 +56,6 @@
                 "help": {
                     "en": "~5.3 GB download",
                     "fr": "Téléchargement de ~5,3 Go"
-                },
-                "default": false
-            },
-            {
-                "name": "use_word2vec",
-                "type": "boolean",
-                "ask": {
-                    "en": "Use word2vec data (de, en, pt)?",
-                    "fr": "Utilizer donnés word2vec (de, en, pt) ?"
-                },
-                "help": {
-                    "en": "~100 MB download",
-                    "fr": "Téléchargement de ~100 Mo"
                 },
                 "default": false
             },

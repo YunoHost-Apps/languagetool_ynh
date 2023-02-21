@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # LanguageTool server for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![Working status](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![Working status](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)
+
 [![Install LanguageTool server with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=languagetool)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -18,8 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 LanguageTool is a multilingual grammar, style, and spell checker. This package provides the API server for use by other programs, like the LanguageTool extensions for browsers and word processors.
 
 
-**Shipped version:** 5.8~ynh1
-
+**Shipped version:** 6.0~ynh1
 
 **Demo:** https://api.languagetool.org/
 
@@ -32,7 +32,7 @@ LanguageTool is a multilingual grammar, style, and spell checker. This package p
 
 ## Configuration
 
-There is a configuration file at `/opt/yunohost/languagetool/languagetool.conf` (for the first install).
+There is a configuration file at `/var/www/languagetool/languagetool.conf` (for the first install).
 
 ## Documentation and resources
 

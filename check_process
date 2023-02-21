@@ -2,7 +2,6 @@
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
 		use_ngram=0	(USE_NGRAM)
-		use_word2vec=1 (USE_WORD2VEC)
 		use_beolingus=1 (USE_BEOLINGUS)
 	; Checks
 		pkg_linter=1
