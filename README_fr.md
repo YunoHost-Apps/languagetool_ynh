@@ -39,7 +39,7 @@ Il y a un fichier de configuration à `/var/www/languagetool/languagetool.conf` 
 * Site officiel de l’app : <https://languagetool.org>
 * Documentation officielle de l’admin : <https://dev.languagetool.org/>
 * Dépôt de code officiel de l’app : <https://github.com/languagetool-org/languagetool>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_languagetool>
+* YunoHost Store: <https://apps.yunohost.org/app/languagetool>
 * Signaler un bug : <https://github.com/YunoHost-Apps/languagetool_ynh/issues>
 
 ## Informations pour les développeurs
