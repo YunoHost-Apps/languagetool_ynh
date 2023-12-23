@@ -74,8 +74,6 @@ function add_languagetool_config {
 
 function compile_fasttext {
 	if [ $use_fasttext -eq 1 ]; then
-		ynh_script_progression --message="Compiling fasttext..." --weight=15
-
 		pushd "$install_dir/fasttext" || ynh_die
 			chown -R $app:$app $install_dir/fasttext
 			sudo -u $app make
