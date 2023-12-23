@@ -33,6 +33,10 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
     [install.use_ngram]
     ask.en = "Use ngram data (de, en, es, fr, nl)?"
     ask.fr = "Utilizer donnés ngram (de, en, es, fr, nl) ?"
