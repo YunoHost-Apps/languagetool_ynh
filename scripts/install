@@ -10,50 +10,10 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# MANAGE SCRIPT FAILURE
-#=================================================
-
-#REMOVEME? ynh_clean_setup () {
-	ynh_clean_check_starting
-}
-# Exit if an error occurs during the execution of the script
-#REMOVEME? ynh_abort_if_errors
-
-#=================================================
-# RETRIEVE ARGUMENTS FROM THE MANIFEST
-#=================================================
-
-#REMOVEME? domain=$YNH_APP_ARG_DOMAIN
-path='/'
-#REMOVEME? use_ngram=$YNH_APP_ARG_USE_NGRAM
-#REMOVEME? use_untested_ngram=$YNH_APP_ARG_USE_UNTESTED_NGRAM
-#REMOVEME? use_fasttext=$YNH_APP_ARG_USE_FASTTEXT
-#REMOVEME? use_compressed_fasttext=$YNH_APP_ARG_USE_COMPRESSED_FASTTEXT
-#REMOVEME? use_beolingus=$YNH_APP_ARG_USE_BEOLINGUS
-#REMOVEME? grammalecte_server=$YNH_APP_ARG_GRAMMALECTE_SERVER
-
-#REMOVEME? app=$YNH_APP_INSTANCE_NAME
-
-#=================================================
-# CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
-#=================================================
-#REMOVEME? ynh_script_progression --message="Validating installation parameters..." --weight=1
-
-#REMOVEME? install_dir=/var/www/$app
-#REMOVEME? test ! -e "$install_dir" || ynh_die --message="This path already contains a folder"
-data_path=/home/yunohost.app/$app
-test ! -e "$data_path" || ynh_die --message="This path already contains a folder"
-
-# Register (book) web path
-#REMOVEME? ynh_webpath_register --app=$app --domain=$domain --path=$path
-
-#=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
 #REMOVEME? ynh_script_progression --message="Storing installation settings..." --weight=1
 
-#REMOVEME? ynh_app_setting_set --app=$app --key=domain --value=$domain
-#REMOVEME? ynh_app_setting_set --app=$app --key=path --value=$path
 ynh_app_setting_set --app=$app --key=use_ngram --value=$use_ngram
 ynh_app_setting_set --app=$app --key=use_untested_ngram --value=$use_untested_ngram
 ynh_app_setting_set --app=$app --key=use_fasttext --value=$use_fasttext
@@ -62,39 +22,10 @@ ynh_app_setting_set --app=$app --key=use_beolingus --value=$use_beolingus
 ynh_app_setting_set --app=$app --key=grammalecte_server --value=$grammalecte_server
 
 #=================================================
-# STANDARD MODIFICATIONS
-#=================================================
-# FIND AND OPEN A PORT
-#=================================================
-#REMOVEME? ynh_script_progression --message="Finding an available port..." --weight=1
-
-# Find an available port
-#REMOVEME? port=$(ynh_find_port --port=8081)
-#REMOVEME? ynh_app_setting_set --app=$app --key=port --value=$port
-
-#=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-#REMOVEME? ynh_script_progression --message="Installing dependencies..." --weight=1
-
-#REMOVEME? ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-#REMOVEME? ynh_script_progression --message="Configuring system user..." --weight=1
-
-# Create a system user
-#REMOVEME? ynh_system_user_create --username=$app --home_dir="$install_dir"
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=100
 
-#REMOVEME? ynh_app_setting_set --app=$app --key=install_dir --value=$install_dir
-#REMOVEME? ynh_app_setting_set --app=$app --key=data_path --value=$data_path
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
 download_data
@@ -107,28 +38,17 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
-#=================================================
-# SPECIFIC SETUP
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression --message="Adding a configuration file..."
-
 add_languagetool_config
-
-#=================================================
-# COMPILE FASTTEXT
-#=================================================
 
 compile_fasttext
 
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=1
-
 # Create a dedicated systemd config
 ynh_add_systemd_config
+
+# Use logrotate to manage application logfile(s)
+ynh_use_logrotate
+
+yunohost service add $app --description="Multilingual grammar, style, and spell checker" --log="/var/log/$app/$app.log"
 
 #=================================================
 # SECURE FILES AND DIRECTORIES
@@ -137,25 +57,8 @@ ynh_add_systemd_config
 # Set permissions to app files
 chown -R root:$app $install_dir
 chmod -R g=u,g-w,o-rwx $install_dir
-chown -R root:$app $data_path
-chmod -R g=u,g-w,o-rwx $data_path
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SETUP LOGROTATE
-#=================================================
-ynh_script_progression --message="Configuring log rotation..." --weight=1
-
-# Use logrotate to manage application logfile(s)
-ynh_use_logrotate
-
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
-
-yunohost service add $app --description="Multilingual grammar, style, and spell checker" --log="/var/log/$app/$app.log"
+chown -R root:$app $data_dir
+chmod -R g=u,g-w,o-rwx $data_dir
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -164,22 +67,6 @@ ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 # Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
-
-#=================================================
-# SETUP SSOWAT
-#=================================================
-#REMOVEME? ynh_script_progression --message="Configuring permissions..." --weight=1
-
-# Everyone can access the app.
-# The "main" permission is automatically created before the install script.
-#REMOVEME? ynh_permission_update --permission="main" --add="visitors"
-
-#=================================================
-# RELOAD NGINX
-#=================================================
-#REMOVEME? ynh_script_progression --message="Reloading NGINX web server..." --weight=1
-
-#REMOVEME? ynh_systemd_action --service_name=nginx --action=reload
 
 #=================================================
 # END OF SCRIPT
