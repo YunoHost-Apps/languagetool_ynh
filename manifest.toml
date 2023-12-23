@@ -92,7 +92,7 @@ ram.runtime = "50M"
         [resources.sources.fasttext-model]
         url = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"
         sha256 = "7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e"
-        format = "bin"
+        format = "whatever"
         rename = "lid.176.bin"
 
         [resources.sources.ngrams-es]
@@ -147,7 +147,7 @@ ram.runtime = "50M"
         [resources.sources.fasttext-model-compressed]
         url = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.ftz"
         sha256 = "8f3472cfe8738a7b6099e8e999c3cbfae0dcd15696aac7d7738a8039db603e83"
-        format = "bin"
+        format = "whatever"
         rename = "lid.176.ftz"
 
 
