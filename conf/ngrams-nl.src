@@ -1,7 +1,0 @@
-SOURCE_URL=https://languagetool.org/download/ngram-data/ngrams-nl-20181229.zip
-SOURCE_SUM=e32afafa2a6a456d9e3fdb28bdbcaa1f783ccad1b21dbdb8f8ba90656366b8bb
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=zip
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=ngrams-nl-20181229.zip
-SOURCE_EXTRACT=true

@@ -1,0 +1,156 @@
+packaging_format = 2
+
+id = "languagetool"
+name = "LanguageTool server"
+description.en = "Multilingual grammar, style, and spell checker (API)"
+description.fr = "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
+
+version = "6.2~ynh1"
+
+maintainers = ["Jules Bertholet"]
+
+[upstream]
+license = "LGPL-2.1-only"
+website = "https://languagetool.org"
+demo = "https://api.languagetool.org/"
+admindoc = "https://dev.languagetool.org/"
+code = "https://github.com/languagetool-org/languagetool"
+cpe = "???" # FIXME: optional but recommended if relevant, this is meant to contain the Common Platform Enumeration, which is sort of a standard id for applications defined by the NIST. In particular, Yunohost may use this is in the future to easily track CVE (=security reports) related to apps. The CPE may be obtained by searching here: https://nvd.nist.gov/products/cpe/search. For example, for Nextcloud, the CPE is 'cpe:2.3:a:nextcloud:nextcloud' (no need to include the version number)
+fund = "???" # FIXME: optional but recommended (or remove if irrelevant / not applicable). This is meant to be an URL where people can financially support this app, especially when its development is based on volunteers and/or financed by its community. YunoHost may later advertise it in the webadmin.
+
+[integration]
+yunohost = ">= 11.2"
+architectures = "all" # FIXME: can be replaced by a list of supported archs using the dpkg --print-architecture nomenclature (amd64/i386/armhf/arm64), for example: ["amd64", "i386"]
+multi_instance = true
+ldap = "?" # FIXME: replace with true, false, or "not_relevant". Not to confuse with the "sso" key : the "ldap" key corresponds to wether or not a user *can* login on the app using its YunoHost credentials.
+sso = "?" # FIXME: replace with true, false, or "not_relevant". Not to confuse with the "ldap" key : the "sso" key corresponds to wether or not a user is *automatically logged-in* on the app when logged-in on the YunoHost portal.
+disk = "50M" # FIXME: replace with an **estimate** minimum disk requirement. e.g. 20M, 400M, 1G, ...
+ram.build = "50M" # FIXME: replace with an **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, ...
+ram.runtime = "50M" # FIXME: replace with an **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, ...
+
+[install]
+    [install.domain]
+    # this is a generic question - ask strings are automatically handled by Yunohost's core
+    type = "domain"
+    full_domain = true
+
+    [install.use_ngram]
+    ask.en = "Use ngram data (de, en, es, fr, nl)?"
+    ask.fr = "Utilizer donnés ngram (de, en, es, fr, nl) ?"
+    help.en = "~15.4 GB download"
+    help.fr = "Téléchargement de ~15,4 Go"
+    type = "boolean"
+    default = true
+
+    [install.use_untested_ngram]
+    ask.en = "Use untested ngram data (he, it, ru, zh)? (requires above option)"
+    ask.fr = "Utilizer donnés ngram non testées (he, it, ru, zh) ? (nécessite l'option ci-dessus)"
+    help.en = "~5.3 GB download"
+    help.fr = "Téléchargement de ~5,3 Go"
+    type = "boolean"
+    default = false
+
+    [install.use_fasttext]
+    ask.en = "Use fastext for language detection?"
+    ask.fr = "Utilizer fasttext pour la détection de langue ?"
+    help.en = "~131 MB download"
+    help.fr = "Téléchargement de ~131 Mo"
+    type = "boolean"
+    default = true
+
+    [install.use_compressed_fasttext]
+    ask.en = "Use compressed fastext model?"
+    ask.fr = "Utilizer modéle fasttext compressé ?"
+    help.en = "Reduces fasttex model download to ~938 KB, but slower and less accurate"
+    help.fr = "Réduit la taille du téléchargement du modéle fasttext à ~938 Ko, mais moins rapide et précis"
+    type = "boolean"
+    default = false
+
+    [install.use_beolingus]
+    ask.en = "Use Beolingus German-English word list?"
+    ask.fr = "Utilizer liste de mots allemand-anglais Beolingus?"
+    help.en = "~8 MB, download"
+    help.fr = "Téléchargement de ~8 MB"
+    type = "boolean"
+    default = false
+
+    [install.grammalecte_server]
+    ask.en = "Grammalecte server URL (optional, adds additional French-language rules if specified)"
+    ask.fr = "URL de serveur Grammalecte (facultatif, ajoute des régles pour la langue française si specifié)"
+    help.en = "You can add a Grammalecte server to your YunoHost installation with the dedicated package (https://github.com/YunoHost-Apps/grammalecte_ynh)"
+    help.fr = "Vous pouvez ajouter un serveur Grammalecte à votre installation YunoHost avec le paquet dedié (https://github.com/YunoHost-Apps/grammalecte_ynh)"
+    type = "string"
+    example = "https://grammalecte.example.com"
+    default = ""
+    optional = true
+
+[resources]
+    [resources.sources]
+        [resources.sources.fasttext-model]
+        url = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"
+        sha256 = "7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e"
+        format = "bin"
+        rename = "lid.176.bin"
+
+        [resources.sources.ngrams-es]
+        url = "https://languagetool.org/download/ngram-data/ngrams-es-20150915.zip"
+        sha256 = "f4010e0d92a1c49e87f9265f85be9b1d419f6e99eea603358e7917ba65b74cce"
+
+        [resources.sources.ngrams-de]
+        url = "https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip"
+        sha256 = "b338ded55f16a00a36cdf41db9234b03000fb750517e5380cfd4d10cb14f72b0"
+
+        [resources.sources.ngram-it]
+        url = "https://languagetool.org/download/ngram-data/untested/ngram-it-20150915.zip"
+        sha256 = "092eeb91d138b808ad3e9b7e98973da503f824caf8a943c41c8700126b11f9f9"
+
+        [resources.sources.ngram-he]
+        url = "https://languagetool.org/download/ngram-data/untested/ngram-he-20150916.zip"
+        sha256 = "8f520d4f24214fe892d646edfa7ec6f9a0bf6b67749a87ef5cc565892ec60410"
+
+        [resources.sources.beolingus]
+        url = "https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.zip"
+        sha256 = "e6b98900d5a700fc94e31139898a0700596477201c78ee860b13dfe9a67638fa"
+        in_subdir = false
+
+        [resources.sources.ngram-ru]
+        url = "https://languagetool.org/download/ngram-data/untested/ngram-ru-20150914.zip"
+        sha256 = "c6d047c944da78998ea014c9fcd516022bdfded1e4fe0f32cf48fa5a6e686e2c"
+
+        [resources.sources.main]
+        url = "https://languagetool.org/download/LanguageTool-6.2.zip"
+        sha256 = "1e8a10ac8e6c40c077c1640eb85fa9ca615a683fecdf7e00e51e463dcd0a0f49"
+
+        [resources.sources.ngrams-nl]
+        url = "https://languagetool.org/download/ngram-data/ngrams-nl-20181229.zip"
+        sha256 = "e32afafa2a6a456d9e3fdb28bdbcaa1f783ccad1b21dbdb8f8ba90656366b8bb"
+
+        [resources.sources.fasttext]
+        url = "https://github.com/facebookresearch/fastText/archive/refs/tags/v0.9.2.tar.gz"
+        sha256 = "7ea4edcdb64bfc6faaaec193ef181bdc108ee62bb6a04e48b2e80b639a99e27e"
+
+        [resources.sources.ngrams-en]
+        url = "https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip"
+        sha256 = "10e548731d9f58189fc36a553f7f685703be30da0d9bb42d1f7b5bf5f8bb232c"
+
+        [resources.sources.ngram-zh]
+        url = "https://languagetool.org/download/ngram-data/untested/ngram-zh-20150916.zip"
+        sha256 = "8217230df12b7515b144fe28b143dc0600c0613caa619813f6a2fac5fe416509"
+
+        [resources.sources.ngrams-fr]
+        url = "https://languagetool.org/download/ngram-data/ngrams-fr-20150913.zip"
+        sha256 = "6e591d5b301b76d595342217bddda6804e515307ef28019d7256efadbd5880cd"
+
+        [resources.sources.fasttext-model-compressed]
+        url = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.ftz"
+        sha256 = "8f3472cfe8738a7b6099e8e999c3cbfae0dcd15696aac7d7738a8039db603e83"
+        format = "bin"
+        rename = "lid.176.ftz"
+
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"

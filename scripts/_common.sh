@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="default-jre build-essential"
+#REMOVEME? pkg_dependencies="default-jre build-essential"
 
 #=================================================
 # PERSONAL HELPERS
@@ -33,7 +33,7 @@ function download_data {
 		else
 			ynh_setup_source --dest_dir="$data_path/fasttext" --source_id="fasttext-model"
 		fi
-		ynh_setup_source --dest_dir="$final_path/fasttext" --source_id="fasttext"
+		ynh_setup_source --dest_dir="$install_dir/fasttext" --source_id="fasttext"
 	fi
 
 	if [ $use_beolingus -eq 1 ]; then
@@ -54,7 +54,7 @@ function add_languagetool_config {
 		else
 			fasttext_model_config_line="fasttextModel=$data_path/fasttext/lid.176.bin"
 		fi
-		fasttext_binary_config_line="fasttextBinary=$final_path/fasttext/fasttext"
+		fasttext_binary_config_line="fasttextBinary=$install_dir/fasttext/fasttext"
 	else
 		fasttext_model_config_line=""
 		fasttext_binary_config_line=""
@@ -72,42 +72,42 @@ function add_languagetool_config {
 		grammalecte_server_config_line=""
 	fi
 
-	ynh_add_config --template="languagetool.conf" --destination="$final_path/languagetool.conf"
+	ynh_add_config --template="languagetool.conf" --destination="$install_dir/languagetool.conf"
 }
 
 function compile_fasttext {
 	if [ $use_fasttext -eq 1 ]; then
 		ynh_script_progression --message="Compiling fasttext..." --weight=15
 
-		pushd "$final_path/fasttext" || ynh_die
-		chown -R $app:$app $final_path/fasttext
+		pushd "$install_dir/fasttext" || ynh_die
+		chown -R $app:$app $install_dir/fasttext
 		sudo -u $app make
-		chown -R root:root $final_path/fasttext
+		chown -R root:root $install_dir/fasttext
 		popd || ynh_die
 	fi
 }
 
 function set_permissions {
-	chown -R root:$app $final_path
-	chmod -R g=u,g-w,o-rwx $final_path
+	chown -R root:$app $install_dir
+	chmod -R g=u,g-w,o-rwx $install_dir
 	chown -R root:$app $data_path
 	chmod -R g=u,g-w,o-rwx $data_path
 }
 
 function load_installation_settings {
-	app=$YNH_APP_INSTANCE_NAME
+#REMOVEME? 	app=$YNH_APP_INSTANCE_NAME
 
-	domain=$(ynh_app_setting_get --app=$app --key=domain)
-	path_url=$(ynh_app_setting_get --app=$app --key=path)
-	final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-	data_path=$(ynh_app_setting_get --app=$app --key=data_path)
-	use_ngram=$(ynh_app_setting_get --app=$app --key=use_ngram)
-	use_untested_ngram=$(ynh_app_setting_get --app=$app --key=use_untested_ngram)
-	use_fasttext=$(ynh_app_setting_get --app=$app --key=use_fasttext)
-	use_compressed_fasttext=$(ynh_app_setting_get --app=$app --key=use_compressed_fasttext)
-	use_beolingus=$(ynh_app_setting_get --app=$app --key=use_beolingus)
-	grammalecte_server=$(ynh_app_setting_get --app=$app --key=grammalecte_server)
-	port=$(ynh_app_setting_get --app=$app --key=port)
+#REMOVEME? 	domain=$(ynh_app_setting_get --app=$app --key=domain)
+#REMOVEME? 	path=$(ynh_app_setting_get --app=$app --key=path)
+#REMOVEME? #REMOVEME? 	install_dir=$(ynh_app_setting_get --app=$app --key=install_dir)
+#REMOVEME? 	data_path=$(ynh_app_setting_get --app=$app --key=data_path)
+#REMOVEME? 	use_ngram=$(ynh_app_setting_get --app=$app --key=use_ngram)
+#REMOVEME? 	use_untested_ngram=$(ynh_app_setting_get --app=$app --key=use_untested_ngram)
+#REMOVEME? 	use_fasttext=$(ynh_app_setting_get --app=$app --key=use_fasttext)
+#REMOVEME? 	use_compressed_fasttext=$(ynh_app_setting_get --app=$app --key=use_compressed_fasttext)
+#REMOVEME? 	use_beolingus=$(ynh_app_setting_get --app=$app --key=use_beolingus)
+#REMOVEME? 	grammalecte_server=$(ynh_app_setting_get --app=$app --key=grammalecte_server)
+#REMOVEME? 	port=$(ynh_app_setting_get --app=$app --key=port)
 }
 
 #=================================================
