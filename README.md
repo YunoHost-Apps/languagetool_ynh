@@ -28,12 +28,6 @@ LanguageTool is a multilingual grammar, style, and spell checker. This package p
 ![Screenshot of LanguageTool server](./doc/screenshots/screenshot_fr.png)
 ![Screenshot of LanguageTool server](./doc/screenshots/screenshot.png)
 
-## Disclaimers / important information
-
-## Configuration
-
-There is a configuration file at `/var/www/languagetool/languagetool.conf` (for the first install).
-
 ## Documentation and resources
 
 * Official app website: <https://languagetool.org>
