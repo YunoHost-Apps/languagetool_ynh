@@ -6,8 +6,8 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__/
-ExecStart=java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port __PORT__ --config __FINALPATH__/languagetool.conf
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port __PORT__ --config __INSTALL_DIR__/languagetool.conf
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 

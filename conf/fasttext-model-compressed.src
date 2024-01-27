@@ -1,7 +1,0 @@
-SOURCE_URL=https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.ftz
-SOURCE_SUM=8f3472cfe8738a7b6099e8e999c3cbfae0dcd15696aac7d7738a8039db603e83
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=bin
-SOURCE_IN_SUBDIR=false
-SOURCE_FILENAME=lid.176.ftz
-SOURCE_EXTRACT=false

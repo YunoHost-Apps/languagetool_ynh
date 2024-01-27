@@ -28,12 +28,6 @@ LanguageTool est un correcteur d'orthographe, de grammaire et de style multiling
 ![Capture d’écran de LanguageTool server](./doc/screenshots/screenshot_fr.png)
 ![Capture d’écran de LanguageTool server](./doc/screenshots/screenshot.png)
 
-## Avertissements / informations importantes
-
-## Configuration
-
-Il y a un fichier de configuration à `/var/www/languagetool/languagetool.conf` (pour la première installation).
-
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://languagetool.org>
