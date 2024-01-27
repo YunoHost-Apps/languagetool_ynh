@@ -24,9 +24,9 @@ chown -R "$app:www-data" "$install_dir"
 #=================================================
 ynh_script_progression --message="Restoring the app data directory..." --weight=30
 
-ynh_restore_file --origin_path="$data_path" --not_mandatory
+ynh_restore_file --origin_path="$data_dir" --not_mandatory
 
-if [ ! -d "$data_path" ]; then
+if [ ! -d "$data_dir" ]; then
     add_languagetool_config
 fi
 

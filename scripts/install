@@ -43,8 +43,8 @@ fi
 # Set permissions to app files
 chown -R root:$app $install_dir
 chmod -R g=u,g-w,o-rwx $install_dir
-chown -R root:$app $data_path
-chmod -R g=u,g-w,o-rwx $data_path
+chown -R root:$app $data_dir
+chmod -R g=u,g-w,o-rwx $data_dir
 
 #=================================================
 # SYSTEM CONFIGURATION
