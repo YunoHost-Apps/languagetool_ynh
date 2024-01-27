@@ -1,7 +1,0 @@
-SOURCE_URL=https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.zip
-SOURCE_SUM=e6b98900d5a700fc94e31139898a0700596477201c78ee860b13dfe9a67638fa
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=zip
-SOURCE_IN_SUBDIR=false
-SOURCE_FILENAME=de-en.txt.zip
-SOURCE_EXTRACT=true

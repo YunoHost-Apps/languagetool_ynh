@@ -1,7 +1,0 @@
-SOURCE_URL=https://languagetool.org/download/ngram-data/untested/ngram-ru-20150914.zip
-SOURCE_SUM=c6d047c944da78998ea014c9fcd516022bdfded1e4fe0f32cf48fa5a6e686e2c
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=zip
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=ngram-ru-20150914.zip
-SOURCE_EXTRACT=true
