@@ -32,6 +32,12 @@ ram.runtime = "800M"
     [install.domain]
     type = "domain"
 
+    [install.init_main_permission]
+    help.en = "Should the login be exposed to public?"
+    help.fr = "La connexion doit-elle être exposée au public ?"
+    type = "group"
+    default = "visitors"
+
     [install.use_ngram]
     ask.en = "Use ngram data (de, en, es, fr, nl)?"
     ask.fr = "Utilizer donnés ngram (de, en, es, fr, nl) ?"
