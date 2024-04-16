@@ -19,7 +19,7 @@ Il NE doit PAS être modifié à la main.
 LanguageTool est un correcteur d'orthographe, de grammaire et de style multilingue. Ce paquet fournit le serveur API pour utilisation depuis d'autres programmes, comme les extensions LangageTool pour navigateurs et logiciels de bureautique.
 
 
-**Version incluse :** 6.2~ynh1
+**Version incluse :** 6.2~ynh2
 
 **Démo :** <https://api.languagetool.org/>
 
