@@ -7,7 +7,7 @@ name = "LanguageTool server"
 description.en = "Multilingual grammar, style, and spell checker (API)"
 description.fr = "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
 
-version = "6.2~ynh1"
+version = "6.2~ynh2"
 
 maintainers = ["Jules Bertholet"]
 
