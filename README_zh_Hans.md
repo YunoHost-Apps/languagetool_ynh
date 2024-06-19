@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 LanguageTool server
+# YunoHost 上的 LanguageTool server
 
 [![集成程度](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![工作状态](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)
 
