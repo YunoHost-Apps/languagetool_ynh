@@ -25,8 +25,8 @@ LanguageTool is a multilingual grammar, style, and spell checker. This package p
 
 ## Capturas de pantalla
 
-![Captura de pantalla de LanguageTool server](./doc/screenshots/screenshot_fr.png)
 ![Captura de pantalla de LanguageTool server](./doc/screenshots/screenshot.png)
+![Captura de pantalla de LanguageTool server](./doc/screenshots/screenshot_fr.png)
 
 ## Documentación e recursos
 
