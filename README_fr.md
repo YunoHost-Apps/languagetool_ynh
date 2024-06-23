@@ -25,8 +25,8 @@ LanguageTool est un correcteur d'orthographe, de grammaire et de style multiling
 
 ## Captures d’écran
 
-![Capture d’écran de LanguageTool server](./doc/screenshots/screenshot.png)
 ![Capture d’écran de LanguageTool server](./doc/screenshots/screenshot_fr.png)
+![Capture d’écran de LanguageTool server](./doc/screenshots/screenshot.png)
 
 ## Documentations et ressources
 
