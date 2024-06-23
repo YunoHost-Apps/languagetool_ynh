@@ -25,8 +25,8 @@ LanguageTool is a multilingual grammar, style, and spell checker. This package p
 
 ## 截图
 
-![LanguageTool server 的截图](./doc/screenshots/screenshot_fr.png)
 ![LanguageTool server 的截图](./doc/screenshots/screenshot.png)
+![LanguageTool server 的截图](./doc/screenshots/screenshot_fr.png)
 
 ## 文档与资源
 
