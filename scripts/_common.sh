@@ -1,11 +1,7 @@
 #!/bin/bash
 
 #=================================================
-# COMMON VARIABLES
-#=================================================
-
-#=================================================
-# PERSONAL HELPERS
+# COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
 download_data() {
@@ -69,21 +65,13 @@ add_languagetool_config() {
         grammalecte_server_config_line=""
     fi
 
-    ynh_add_config --template="languagetool.conf" --destination="$install_dir/languagetool.conf"
+    ynh_config_add --template="languagetool.conf" --destination="$install_dir/languagetool.conf"
 }
 
 compile_fasttext() {
     pushd "$install_dir/fasttext"
         chown -R "$app:$app" $install_dir/fasttext
-        ynh_exec_as "$app" make -j "$(( $(nproc) * 3/4 ))"
+        ynh_exec_as_app make -j "$(( $(nproc) * 3/4 ))"
         chown -R root:root $install_dir/fasttext
     popd
 }
-
-#=================================================
-# EXPERIMENTAL HELPERS
-#=================================================
-
-#=================================================
-# FUTURE OFFICIAL HELPERS
-#=================================================
