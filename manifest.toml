@@ -7,7 +7,7 @@ name = "LanguageTool server"
 description.en = "Multilingual grammar, style, and spell checker (API)"
 description.fr = "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
 
-version = "6.4~ynh1"
+version = "6.5~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -91,8 +91,8 @@ ram.runtime = "800M"
 [resources]
     [resources.sources]
     [resources.sources.main]
-    url = "https://languagetool.org/download/LanguageTool-6.4.zip"
-    sha256 = "d5d517335d1ca33f33412920447fa0c742ef78d645521d650e0e22628fe0d3bd"
+    url = "https://languagetool.org/download/LanguageTool-6.5.zip"
+    sha256 = "27f3ae5a29efbc8267a5a266908dfec205d16d312af8516e0b5bcec871edea0b"
 
     [resources.sources.ngrams-de]
     url = "https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip"

@@ -19,7 +19,7 @@ NON DEVE essere modificato manualmente.
 LanguageTool is a multilingual grammar, style, and spell checker. This package provides the API server for use by other programs, like the LanguageTool extensions for browsers and word processors.
 
 
-**Versione pubblicata:** 6.2~ynh1
+**Versione pubblicata:** 6.5~ynh1
 
 **Prova:** <https://api.languagetool.org/>
 
