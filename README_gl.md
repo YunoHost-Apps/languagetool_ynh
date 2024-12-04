@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # LanguageTool server para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/languagetool)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/languagetool)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/languagetool)
 
 [![Instalar LanguageTool server con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=languagetool)
 

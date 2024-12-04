@@ -5,7 +5,9 @@ No se debe editar a mano.
 
 # LanguageTool server para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/languagetool)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
+![Estado funcional](https://apps.yunohost.org/badge/state/languagetool)
+![Estado En Mantención](https://apps.yunohost.org/badge/maintained/languagetool)
 
 [![Instalar LanguageTool server con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=languagetool)
 
@@ -38,7 +40,7 @@ LanguageTool is a multilingual grammar, style, and spell checker. This package p
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
