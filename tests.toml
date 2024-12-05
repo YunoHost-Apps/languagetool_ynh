@@ -11,4 +11,4 @@ test_format = 1.0
     # Tests to run
     # ------------
 
-    test_upgrade_from.81d1f5dc1a42305d8cf3a6264176838d0164bfdb.name = "5.7~ynh1"
+    test_upgrade_from.44f4fa90bd7e0b1768bca3b2368c8b16ac4e679f.name = "6.2~ynh1"

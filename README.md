@@ -5,7 +5,9 @@ It shall NOT be edited by hand.
 
 # LanguageTool server for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/languagetool.svg)](https://dash.yunohost.org/appci/app/languagetool) ![Working status](https://ci-apps.yunohost.org/ci/badges/languagetool.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/languagetool.maintain.svg)
+[![Integration level](https://apps.yunohost.org/badge/integration/languagetool)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
+![Working status](https://apps.yunohost.org/badge/state/languagetool)
+![Maintenance status](https://apps.yunohost.org/badge/maintained/languagetool)
 
 [![Install LanguageTool server with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=languagetool)
 
@@ -19,7 +21,7 @@ It shall NOT be edited by hand.
 LanguageTool is a multilingual grammar, style, and spell checker. This package provides the API server for use by other programs, like the LanguageTool extensions for browsers and word processors.
 
 
-**Shipped version:** 6.4~ynh1
+**Shipped version:** 6.5~ynh1
 
 **Demo:** <https://api.languagetool.org/>
 
