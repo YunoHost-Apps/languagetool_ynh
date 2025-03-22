@@ -94,6 +94,8 @@ ram.runtime = "800M"
     [resources.sources.main]
     url = "https://languagetool.org/download/LanguageTool-6.4.zip"
     sha256 = "d5d517335d1ca33f33412920447fa0c742ef78d645521d650e0e22628fe0d3bd"
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.needs_manual_tweaks = true
 
     [resources.sources.ngrams-de]
     url = "https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip"
