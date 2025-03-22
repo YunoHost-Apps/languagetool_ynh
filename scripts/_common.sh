@@ -72,6 +72,6 @@ compile_fasttext() {
     pushd "$install_dir/fasttext"
         chown -R "$app:$app" $install_dir/fasttext
         ynh_exec_as_app make -j "$(( $(nproc) * 3/4 ))"
-        chown -R root:root $install_dir/fasttext
+        chown -R "$app:$app" $install_dir/fasttext
     popd
 }
