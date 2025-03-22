@@ -93,7 +93,7 @@ ram.runtime = "800M"
     [resources.sources]
     [resources.sources.main]
     url = "https://languagetool.org/download/LanguageTool-6.5.zip"
-    sha256 = "27f3ae5a29efbc8267a5a266908dfec205d16d312af8516e0b5bcec871edea0b""
+    sha256 = "27f3ae5a29efbc8267a5a266908dfec205d16d312af8516e0b5bcec871edea0b"
     autoupdate.strategy = "latest_github_release"
     autoupdate.needs_manual_tweaks = true
 
