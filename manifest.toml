@@ -7,7 +7,7 @@ name = "LanguageTool server"
 description.en = "Multilingual grammar, style, and spell checker (API)"
 description.fr = "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
 
-version = "6.5~ynh1"
+version = "6.6~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -92,10 +92,12 @@ ram.runtime = "800M"
 [resources]
     [resources.sources]
     [resources.sources.main]
-    url = "https://languagetool.org/download/LanguageTool-6.5.zip"
-    sha256 = "27f3ae5a29efbc8267a5a266908dfec205d16d312af8516e0b5bcec871edea0b"
-    autoupdate.strategy = "latest_github_release"
-    autoupdate.needs_manual_tweaks = true
+    url = "https://languagetool.org/download/LanguageTool-6.6.zip"
+    sha256 = "53600506b399bb5ffe1e4c8dec794fd378212f14aaf38ccef9b6f89314d11631"
+
+    # Autoupdate cannot work because asset is hosted on a custom website
+    # autoupdate.strategy = "latest_github_release"
+    # autoupdate.needs_manual_tweaks = true
 
     [resources.sources.ngrams-de]
     url = "https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip"
