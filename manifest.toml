@@ -163,7 +163,7 @@ ram.runtime = "800M"
     rename = "lid.176.ftz"
 
     [resources.sources.fasttext]
-    url = "https://github.com/facebookresearch/fastText/archive/refs/heads/main.zip"
+    url = "https://github.com/facebookresearch/fastText/archive/refs/heads/main.tar.gz"
     sha256 = "ed7bd4735613389062d513868cce46c104c96a6e80a99df060936e7cb328920d"
     prefetch = false
 
