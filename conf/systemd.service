@@ -1,5 +1,5 @@
 [Unit]
-Description=Spelling and grammar checking server
+Description=LanguageTool: Spelling and grammar checking server
 After=network.target
 
 [Service]

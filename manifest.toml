@@ -7,7 +7,7 @@ name = "LanguageTool server"
 description.en = "Multilingual grammar, style, and spell checker (API)"
 description.fr = "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
 
-version = "6.6~ynh1"
+version = "6.6~ynh2"
 
 maintainers = ["Jules Bertholet"]
 
@@ -19,12 +19,14 @@ admindoc = "https://dev.languagetool.org/"
 code = "https://github.com/languagetool-org/languagetool"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "1G"
 ram.build = "50M"
 ram.runtime = "800M"
@@ -161,8 +163,8 @@ ram.runtime = "800M"
     rename = "lid.176.ftz"
 
     [resources.sources.fasttext]
-    url = "https://github.com/facebookresearch/fastText/archive/refs/tags/v0.9.2.tar.gz"
-    sha256 = "7ea4edcdb64bfc6faaaec193ef181bdc108ee62bb6a04e48b2e80b639a99e27e"
+    url = "https://github.com/facebookresearch/fastText/archive/1142dc4c4ecbc19cc16eee5cdd28472e689267e6.tar.gz"
+    sha256 = "c8b6cf146839a2716658fa5517a0810beed482caf2fc0bd2f63df10088d8d507"
     prefetch = false
 
     [resources.sources.beolingus]
