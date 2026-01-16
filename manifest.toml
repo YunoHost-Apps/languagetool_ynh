@@ -43,7 +43,7 @@ ram.runtime = "800M"
 
     [install.use_ngram]
     ask.en = "Use ngram data (de, en, es, fr, nl)?"
-    ask.fr = "Utilizer donnés ngram (de, en, es, fr, nl) ?"
+    ask.fr = "Utiliser données ngram (de, en, es, fr, nl) ?"
     help.en = "~15.4 GB download"
     help.fr = "Téléchargement de ~15,4 Go"
     type = "boolean"
@@ -51,31 +51,31 @@ ram.runtime = "800M"
 
     [install.use_untested_ngram]
     ask.en = "Use untested ngram data (he, it, ru, zh)? (requires above option)"
-    ask.fr = "Utilizer donnés ngram non testées (he, it, ru, zh) ? (nécessite l'option ci-dessus)"
+    ask.fr = "Utiliser données ngram non testées (he, it, ru, zh) ? (nécessite l'option ci-dessus)"
     help.en = "~5.3 GB download"
     help.fr = "Téléchargement de ~5,3 Go"
     type = "boolean"
     default = false
 
     [install.use_fasttext]
-    ask.en = "Use fastext for language detection?"
-    ask.fr = "Utilizer fasttext pour la détection de langue ?"
+    ask.en = "Use fasttext for language detection?"
+    ask.fr = "Utiliser fasttext pour la détection de langue ?"
     help.en = "~131 MB download"
     help.fr = "Téléchargement de ~131 Mo"
     type = "boolean"
     default = true
 
     [install.use_compressed_fasttext]
-    ask.en = "Use compressed fastext model?"
-    ask.fr = "Utilizer modéle fasttext compressé ?"
-    help.en = "Reduces fasttex model download to ~938 KB, but slower and less accurate"
-    help.fr = "Réduit la taille du téléchargement du modéle fasttext à ~938 Ko, mais moins rapide et précis"
+    ask.en = "Use compressed fasttext model?"
+    ask.fr = "Utiliser modèle fasttext compressé ?"
+    help.en = "Reduces fasttext model download to ~938 KB, but slower and less accurate"
+    help.fr = "Réduit la taille du téléchargement du modèle fasttext à ~938 Ko, mais moins rapide et précis"
     type = "boolean"
     default = false
 
     [install.use_beolingus]
     ask.en = "Use Beolingus German-English word list?"
-    ask.fr = "Utilizer liste de mots allemand-anglais Beolingus?"
+    ask.fr = "Utiliser liste de mots allemand-anglais Beolingus ?"
     help.en = "~8 MB, download"
     help.fr = "Téléchargement de ~8 MB"
     type = "boolean"
@@ -83,9 +83,9 @@ ram.runtime = "800M"
 
     [install.grammalecte_server]
     ask.en = "Grammalecte server URL (optional, adds additional French-language rules if specified)"
-    ask.fr = "URL de serveur Grammalecte (facultatif, ajoute des régles pour la langue française si specifié)"
+    ask.fr = "URL de serveur Grammalecte (facultatif, ajoute des règles pour la langue française si spécifié)"
     help.en = "You can add a Grammalecte server to your YunoHost installation with the dedicated package (https://github.com/YunoHost-Apps/grammalecte_ynh)"
-    help.fr = "Vous pouvez ajouter un serveur Grammalecte à votre installation YunoHost avec le paquet dedié (https://github.com/YunoHost-Apps/grammalecte_ynh)"
+    help.fr = "Vous pouvez ajouter un serveur Grammalecte à votre installation YunoHost avec le paquet dédié (https://github.com/YunoHost-Apps/grammalecte_ynh)"
     type = "string"
     example = "https://grammalecte.example.com"
     default = ""
