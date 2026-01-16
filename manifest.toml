@@ -19,7 +19,7 @@ admindoc = "https://dev.languagetool.org/"
 code = "https://github.com/languagetool-org/languagetool"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
