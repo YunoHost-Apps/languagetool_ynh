@@ -7,7 +7,7 @@ name = "LanguageTool server"
 description.en = "Multilingual grammar, style, and spell checker (API)"
 description.fr = "Correcteur d'orthographe, de grammaire et de style multilingue (API)"
 
-version = "6.6~ynh2"
+version = "6.6~ynh3"
 
 maintainers = ["Jules Bertholet"]
 
@@ -101,50 +101,61 @@ ram.runtime = "800M"
     # autoupdate.strategy = "latest_github_release"
     # autoupdate.needs_manual_tweaks = true
 
+    # NB: in_subdir = false here avoids OOM on low-RAM servers, see
+    # download_data() in scripts/_common.sh for details.
     [resources.sources.ngrams-de]
     url = "https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip"
     sha256 = "b338ded55f16a00a36cdf41db9234b03000fb750517e5380cfd4d10cb14f72b0"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngrams-en]
     url = "https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip"
     sha256 = "10e548731d9f58189fc36a553f7f685703be30da0d9bb42d1f7b5bf5f8bb232c"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngrams-es]
     url = "https://languagetool.org/download/ngram-data/ngrams-es-20150915.zip"
     sha256 = "f4010e0d92a1c49e87f9265f85be9b1d419f6e99eea603358e7917ba65b74cce"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngrams-fr]
     url = "https://languagetool.org/download/ngram-data/ngrams-fr-20150913.zip"
     sha256 = "6e591d5b301b76d595342217bddda6804e515307ef28019d7256efadbd5880cd"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngrams-nl]
     url = "https://languagetool.org/download/ngram-data/ngrams-nl-20181229.zip"
     sha256 = "e32afafa2a6a456d9e3fdb28bdbcaa1f783ccad1b21dbdb8f8ba90656366b8bb"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngram-he]
     url = "https://languagetool.org/download/ngram-data/untested/ngram-he-20150916.zip"
     sha256 = "8f520d4f24214fe892d646edfa7ec6f9a0bf6b67749a87ef5cc565892ec60410"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngram-it]
     url = "https://languagetool.org/download/ngram-data/untested/ngram-it-20150915.zip"
     sha256 = "092eeb91d138b808ad3e9b7e98973da503f824caf8a943c41c8700126b11f9f9"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngram-ru]
     url = "https://languagetool.org/download/ngram-data/untested/ngram-ru-20150914.zip"
     sha256 = "c6d047c944da78998ea014c9fcd516022bdfded1e4fe0f32cf48fa5a6e686e2c"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.ngram-zh]
     url = "https://languagetool.org/download/ngram-data/untested/ngram-zh-20150916.zip"
     sha256 = "8217230df12b7515b144fe28b143dc0600c0613caa619813f6a2fac5fe416509"
     prefetch = false
+    in_subdir = false
 
     [resources.sources.fasttext-model]
     url = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"

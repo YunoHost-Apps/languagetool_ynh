@@ -6,17 +6,24 @@
 
 download_data() {
     if [ "$use_ngram" -eq 1 ]; then
-        ynh_setup_source --dest_dir="$data_dir/ngrams/de" --source_id="ngrams-de"
-        ynh_setup_source --dest_dir="$data_dir/ngrams/en" --source_id="ngrams-en"
-        ynh_setup_source --dest_dir="$data_dir/ngrams/es" --source_id="ngrams-es"
-        ynh_setup_source --dest_dir="$data_dir/ngrams/fr" --source_id="ngrams-fr"
-        ynh_setup_source --dest_dir="$data_dir/ngrams/nl" --source_id="ngrams-nl"
+        # NB: these archives each contain a single top-level "<lang>/" folder
+        # (e.g. "de/1grams/..."), so we point dest_dir at the parent "ngrams"
+        # dir with in_subdir=false (set in manifest.toml) rather than at
+        # "ngrams/<lang>" with the default in_subdir=true. This lets
+        # ynh_setup_source extract straight into place instead of via an
+        # intermediate temp dir + copy, which can OOM on low-RAM servers when
+        # that temp dir is tmpfs-backed (see issue #46).
+        ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngrams-de"
+        ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngrams-en"
+        ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngrams-es"
+        ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngrams-fr"
+        ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngrams-nl"
 
         if [ "$use_untested_ngram" -eq 1 ]; then
-            ynh_setup_source --dest_dir="$data_dir/ngrams/he" --source_id="ngram-he"
-            ynh_setup_source --dest_dir="$data_dir/ngrams/it" --source_id="ngram-it"
-            ynh_setup_source --dest_dir="$data_dir/ngrams/ru" --source_id="ngram-ru"
-            ynh_setup_source --dest_dir="$data_dir/ngrams/zh" --source_id="ngram-zh"
+            ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngram-he"
+            ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngram-it"
+            ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngram-ru"
+            ynh_setup_source --dest_dir="$data_dir/ngrams" --source_id="ngram-zh"
         fi
     fi
 
