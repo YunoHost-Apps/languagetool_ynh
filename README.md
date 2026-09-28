@@ -12,7 +12,7 @@ Multilingual grammar, style, and spell checker (API)
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://languagetool.org)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://api.languagetool.org/)
-[![Version: 6.6~ynh2](https://img.shields.io/badge/Version-6.6~ynh2-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
+[![Version: 6.9~ynh1](https://img.shields.io/badge/Version-6.9~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/languagetool"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
@@ -29,6 +29,13 @@ Multilingual grammar, style, and spell checker (API)
 [![Automatic tests level](https://apps.yunohost.org/badge/cilevel/languagetool)](https://ci-apps.yunohost.org/ci/apps/languagetool/)
 
 🛠️ Upstream LanguageTool server repository: <https://github.com/languagetool-org/languagetool>
+
+### 📥 Download source
+
+This package downloads the LanguageTool server from the official snapshot repository:
+
+- Snapshots listing: <https://internal1.languagetool.org/snapshots/>
+- Direct download: <https://internal1.languagetool.org/snapshots/LanguageTool-20260925-snapshot.zip>
 
 Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/languagetool_ynh/tree/testing).
 
